@@ -18,10 +18,28 @@
  * La función debe retornar el monto final a pagar (número).
  */
 
-function calcularMontoFinal (valorCompra, colorBolita) {
-  // Implementa tu solución aquí
-  // valorCompra: número positivo
-  // colorBolita: string ("blanca", "verde", "amarilla", "azul" o "roja")
+const valorCompra = parseFloat(process.env.VALOR_COMPRA)
+const colorBolita = process.env.COLOR_BOLITA
+
+let descuento = 0
+switch (colorBolita) {
+  case 'blanca':
+    descuento = 0
+    break
+  case 'verde':
+    descuento = 0.10
+    break
+  case 'amarilla':
+    descuento = 0.25
+    break
+  case 'azul':
+    descuento = 0.50
+    break
+  case 'roja':
+    descuento = 1.00
+    break
 }
 
-module.exports = calcularMontoFinal
+const montoFinal = valorCompra * (1 - descuento)
+
+module.exports = montoFinal

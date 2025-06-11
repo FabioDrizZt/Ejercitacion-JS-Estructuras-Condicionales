@@ -10,8 +10,27 @@
  * - paridad: "par" o "impar" (el cero se considera par)
  */
 
-function analizarNumero (numero) {
-  // Implementa tu solución aquí
+const numero = parseInt(process.env.NUMERO, 10);
+
+let signo;
+if (numero > 0) {
+  signo = "positivo";
+} else if (numero < 0) {
+  signo = "negativo";
+} else {
+  signo = "cero";
 }
 
-module.exports = analizarNumero
+let paridad;
+if (numero % 2 === 0) {
+  paridad = "par";
+} else {
+  paridad = "impar";
+}
+
+const resultado = {
+  signo,
+  paridad,
+};
+
+module.exports = resultado;

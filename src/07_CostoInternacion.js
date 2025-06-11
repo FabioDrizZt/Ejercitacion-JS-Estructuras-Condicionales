@@ -16,11 +16,27 @@
  * La función debe retornar el costo total de internación (costo diario ajustado * días).
  */
 
-function calcularCostoInternacion (tipoEnfermedad, edad, dias) {
-  // Implementa tu solución aquí
-  // tipoEnfermedad: número (1, 2 o 3)
-  // edad: número entero positivo
-  // dias: número entero positivo (días de internación)
+const tipoEnfermedad = parseInt(process.env.TIPO_ENFERMEDAD, 10)
+const edad = parseInt(process.env.EDAD, 10)
+const dias = parseInt(process.env.DIAS, 10)
+
+let costoBaseDiario = 0
+if (tipoEnfermedad === 1) {
+  costoBaseDiario = 425
+} else if (tipoEnfermedad === 2) {
+  costoBaseDiario = 800
+} else if (tipoEnfermedad === 3) {
+  costoBaseDiario = 1500
 }
 
-module.exports = calcularCostoInternacion
+let recargo = 0
+if (edad >= 14 && edad <= 22) {
+  recargo = 0.10
+} else if (edad > 22) {
+  recargo = 0.20
+}
+
+const costoDiarioAjustado = costoBaseDiario * (1 + recargo)
+const costoTotal = costoDiarioAjustado * dias
+
+module.exports = costoTotal

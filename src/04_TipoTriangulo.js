@@ -14,8 +14,22 @@
  * Si no es un triángulo válido, la función debe retornar "No es un triángulo".
  */
 
-function determinarTipoTriangulo (lado1, lado2, lado3) {
-  // Implementa tu solución aquí
+const lado1 = parseInt(process.env.LADO1, 10)
+const lado2 = parseInt(process.env.LADO2, 10)
+const lado3 = parseInt(process.env.LADO3, 10)
+
+let resultado
+
+if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
+  if (lado1 === lado2 && lado2 === lado3) {
+    resultado = 'Equilátero'
+  } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+    resultado = 'Isósceles'
+  } else {
+    resultado = 'Escaleno'
+  }
+} else {
+  resultado = 'No es un triángulo'
 }
 
-module.exports = determinarTipoTriangulo
+module.exports = resultado

@@ -16,9 +16,21 @@
  * La función debe retornar un string con la calificación.
  */
 
-function asignarCalificacion (nota) {
-  // Implementa tu solución aquí
-  // nota: número entre 0 y 100
+const nota = parseInt(process.env.NOTA, 10)
+let calificacion
+
+if (nota < 0 || nota > 100) {
+  calificacion = 'Nota inválida'
+} else if (nota >= 90) {
+  calificacion = 'A'
+} else if (nota >= 80) {
+  calificacion = 'B'
+} else if (nota >= 70) {
+  calificacion = 'C'
+} else if (nota >= 60) {
+  calificacion = 'D'
+} else {
+  calificacion = 'F'
 }
 
-module.exports = asignarCalificacion
+module.exports = calificacion

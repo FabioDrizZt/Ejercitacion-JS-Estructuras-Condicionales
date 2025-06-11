@@ -10,8 +10,15 @@
  * La función debe retornar un string con la fecha formateada.
  */
 
-function formatearFecha (dia, mes, ano) {
-  // Implementa tu solución aquí
-}
+const dia = parseInt(process.env.DIA, 10)
+const mes = parseInt(process.env.MES, 10)
+const ano = parseInt(process.env.ANO, 10)
 
-module.exports = formatearFecha
+const meses = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+]
+
+const nombreMes = meses[mes - 1]
+
+module.exports = `${dia} de ${nombreMes} de ${ano}`

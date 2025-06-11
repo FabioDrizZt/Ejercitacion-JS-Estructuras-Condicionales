@@ -8,8 +8,11 @@
  * La función debe retornar un array con los tres valores ordenados.
  */
 
-function ordenarValores (a, b, c) {
-  // Implementa tu solución aquí
-}
+const a = parseInt(process.env.VALOR_A, 10)
+const b = parseInt(process.env.VALOR_B, 10)
+const c = parseInt(process.env.VALOR_C, 10)
 
-module.exports = ordenarValores
+const valores = [a, b, c]
+valores.sort((x, y) => x - y)
+
+module.exports = valores
