@@ -21,10 +21,11 @@
  * La función debe retornar un string con el signo zodiacal.
  */
 
-function determinarSignoZodiacal (dia, mes) {
-  // Implementa tu solución aquí
-  // dia: número entre 1 y 31
-  // mes: número entre 1 y 12 (1 = enero, 12 = diciembre)
-}
+const dia = parseInt(process.env.DIA, 10)
+const mes = parseInt(process.env.MES, 10)
 
-module.exports = determinarSignoZodiacal
+let signo
+
+// Implementa tu solución aquí para determinar el signo zodiacal
+
+module.exports = signo

@@ -17,10 +17,11 @@
  * La función debe retornar el estado del estudiante como un string.
  */
 
-function determinarEstado (nota, carrera) {
-  // Implementa tu solución aquí
-  // nota: número entre 1.0 y 7.0
-  // carrera: string ("diurna" o "vespertina")
-}
+const nota = parseFloat(process.env.NOTA)
+const carrera = process.env.CARRERA
 
-module.exports = determinarEstado
+let estado
+
+// Implementa tu solución aquí para determinar el estado del estudiante
+
+module.exports = estado

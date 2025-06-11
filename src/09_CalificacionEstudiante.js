@@ -16,9 +16,9 @@
  * La función debe retornar un string con la calificación.
  */
 
-function asignarCalificacion (nota) {
-  // Implementa tu solución aquí
-  // nota: número entre 0 y 100
-}
+const nota = parseInt(process.env.NOTA, 10)
+let calificacion
 
-module.exports = asignarCalificacion
+// Implementa tu solución aquí para asignar la calificación
+
+module.exports = calificacion

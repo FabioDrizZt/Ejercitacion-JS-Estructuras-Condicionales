@@ -14,8 +14,12 @@
  * Si no es un triángulo válido, la función debe retornar "No es un triángulo".
  */
 
-function determinarTipoTriangulo (lado1, lado2, lado3) {
-  // Implementa tu solución aquí
-}
+const lado1 = parseInt(process.env.LADO1, 10)
+const lado2 = parseInt(process.env.LADO2, 10)
+const lado3 = parseInt(process.env.LADO3, 10)
 
-module.exports = determinarTipoTriangulo
+let resultado
+
+// Implementa tu solución aquí para determinar el tipo de triángulo
+
+module.exports = resultado
